@@ -31,3 +31,25 @@ namespace BankAccountNS
         {
             get { return m_balance; }
         }
+        // Method (Debit) 
+        public void Debit(double amount)
+        {
+            if (m_frozen)
+            {
+                throw new Exception("Account frozen");
+            }
+
+            if (amount > m_balance)
+            {
+                throw new ArgumentOutOfRangeException("amount");
+            }
+
+            if (amount < 0)
+            {
+                throw new ArgumentOutOfRangeException("amount");
+            }
+
+            m_balance += amount; // intentionally incorrect code
+        }
+
+      
