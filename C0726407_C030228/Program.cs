@@ -1,15 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace C0726407_C030228
+namespace BankAccountNS
 {
-    class Program
+    /// <Manpreet singh sidhu (c0726407)
+    /// <Arshdeep singh Brar (c0730228)
+    public class BankAccount
     {
-        static void Main(string[] args)
-        {
+        private string m_customerName;
+
+        private double m_balance;
+
+        private bool m_frozen = false;
+
+        private BankAccount()
+        {// mmm
         }
-    }
-}
+
+        public BankAccount(string customerName, double balance)
+        {
+            m_customerName = customerName;
+            m_balance = balance;
+        }
+
+        public string CustomerName
+        {
+            get { return m_customerName; }
+        }
+
+        public double Balance
+        {
+            get { return m_balance; }
+        }
