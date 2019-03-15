@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankAccounts
 {
+
     //Manpreet singh sidhu C0726407
     //Arshdeep singh brar C0730228
 
@@ -13,8 +14,6 @@ namespace BankAccounts
 
     public class BankAccount
     {
-        public const string DebitAmountExceedsBalanceMessage = "Debit amount exceeds balance";
-        public const string DebitAmountLessThanZeroMessage = "Debit amount is less than zero";
         private string m_customerName;
 
         private double m_balance;
@@ -50,15 +49,15 @@ namespace BankAccounts
 
             if (amount > m_balance)
             {
-                throw new ArgumentOutOfRangeException("amount", amount, DebitAmountExceedsBalanceMessage);
+                throw new ArgumentOutOfRangeException("amount");
             }
 
             if (amount < 0)
             {
-                throw new ArgumentOutOfRangeException("amount", amount, DebitAmountLessThanZeroMessage);
+                throw new ArgumentOutOfRangeException("amount");
             }
 
-            m_balance -= amount; // intentionally incorrect code
+            m_balance += amount; // intentionally incorrect code
         }
 
         public void Credit(double amount)
